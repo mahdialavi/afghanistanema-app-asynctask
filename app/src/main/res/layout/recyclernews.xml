@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#eee"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:id="@+id/title"
+            android:layout_marginLeft="6dp"
+            android:textSize="16dp"
+            android:layout_marginRight="6dp"
+            android:text="آخرین اخبار روز دنیا و افغانستان"
+            />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:src="@drawable/img"
+            android:id="@+id/img"
+            android:padding="5dp"
+            android:layout_height="90dp" />
+    </LinearLayout>
+    
+</LinearLayout>
