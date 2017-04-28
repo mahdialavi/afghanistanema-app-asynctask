@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
             JSONArray jsonTitle=jsonObject.getJSONArray("title");
            JSONArray jsonPic=jsonObject.getJSONArray("pics");
-           Toast.makeText(MainActivity.this, jsonPic+"", Toast.LENGTH_SHORT).show();
+         //  Toast.makeText(MainActivity.this, jsonPic+"", Toast.LENGTH_SHORT).show();
 
           Log.i("LOG", jsonPic+"");
    for (int i=0;i<jsonTitle.length();i++){
