@@ -3,7 +3,6 @@ package com.sma_rasanehsoft.afghanistanema_app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -14,7 +13,6 @@ public class Activity_splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_splash);
-        Button button = (Button) findViewById(R.id.ali);
 //        new AsyncTaskNews("http://192.168.1.201/afg-app/index.php").execute();
 
 

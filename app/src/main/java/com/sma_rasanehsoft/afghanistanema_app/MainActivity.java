@@ -5,10 +5,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
@@ -32,7 +33,12 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     public static Handler handler;
     RecyclerView recyclenews;
 
-    Button btn;
+    TextView txtafgnews;
+    TextView txtmohajerin;
+    TextView txtvariousnews;
+    TextView txtsport;
+    TextView txtscience;
+
     SliderLayout sliderShow;
     DrawerLayout drawerLayout;
     ImageView hambergurmenu;
@@ -44,6 +50,49 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+
+        txtafgnews= (TextView) findViewById(R.id.txtafgnews);
+        txtmohajerin= (TextView) findViewById(R.id.txtmohajerin);
+        txtvariousnews = (TextView) findViewById(R.id.txtvariousnews);
+        txtsport= (TextView) findViewById(R.id.txtsport);
+        txtscience= (TextView) findViewById(R.id.txtscience);
+
+        txtafgnews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, Activity_AfNews.class);
+//                startActivity(intent);
+              //  Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+//        txtmohajerin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent2 = new Intent(G.context, Activity_mohajerin.class);
+//                startActivity(intent2);
+//
+//            }
+//        });
+//        txtvariousnews.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent3 = new Intent(G.context, Activity_VariousNews.class);
+//                startActivity(intent3);            }
+//        });
+//        txtsport.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent4 = new Intent(G.context, Activity_SportNews.class);
+//                startActivity(intent4);            }
+//        });
+//        txtscience.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent5 = new Intent(G.context, Activity_Science.class);
+//                startActivity(intent5);            }
+//        });
+
 
 //        Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
 //        Log.i("images", data);
@@ -60,25 +109,28 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         recyclenews.setHasFixedSize(true);
         recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
 
+
+
+
+
         try {
             JSONObject jsonObject=new JSONObject(data);
 
             JSONArray jsonTitle=jsonObject.getJSONArray("title");
-            JSONArray jsonimages=jsonObject.getJSONArray("introtext");
-           // Toast.makeText(G.context, jsonTitle.toString(), Toast.LENGTH_LONG).show();
+           JSONArray jsonPic=jsonObject.getJSONArray("pics");
+           Toast.makeText(MainActivity.this, jsonPic+"", Toast.LENGTH_SHORT).show();
 
-
-            for (int i=0;i<jsonTitle.length();i++){
-
-               // recycleimg.add(jsonimages.getString(i));
-                recycleTitle.add(jsonTitle.getString(i));
+          Log.i("LOG", jsonPic+"");
+   for (int i=0;i<jsonTitle.length();i++){
+              recycleimg.add(jsonPic.getString(i));
+                 recycleTitle.add(jsonTitle.getString(i));
             }
 
-            for (int j=0;j<recycleTitle.size();j++){
+            for (int i=0;i<recycleTitle.size();i++){
 
                 recycleinfo recycleinfo = new recycleinfo();
-                recycleinfo.title = recycleTitle.get(j);
-              //  recycleinfo.img = recycleimg.get(j);
+                recycleinfo.title = recycleTitle.get(i);
+             recycleinfo.img = recycleimg.get(i);
 
                 recylerinfos.add(recycleinfo);
 
@@ -100,16 +152,10 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         });
 
 
-        urlpics.add("http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
-        urlpics.add("http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
-        urlpics.add("http://cdn3.nflximg.net/images/3093/2043093.jpg");
-        urlpics.add("http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
+        urlpics.add("http://192.168.1.201/afgApp/images/akhbar/5/q103.jpg");
+
 
         names.add("Phone");
-        names.add("Shirt");
-        names.add("Laptop");
-        names.add("Coolpad");
-
 
 
         for (int i = 0; i < urlpics.size(); i++) {

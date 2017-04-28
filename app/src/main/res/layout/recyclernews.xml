@@ -7,18 +7,21 @@
         android:layout_width="match_parent"
         android:background="#eee"
         android:gravity="right"
-        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:layout_height="90dp"
         android:orientation="horizontal"
         >
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:layout_marginTop="20dp"
             android:id="@+id/title"
-            android:layout_marginLeft="6dp"
+            android:lineSpacingMultiplier="1.5"
+            android:layout_marginLeft="0dp"
             android:textSize="16dp"
             android:layout_marginRight="6dp"
-            android:text="آخرین اخبار روز دنیا و افغانستان"
+            android:text="آخرین اخبار روز دنیا و افغان"
             />
 
         <ImageView

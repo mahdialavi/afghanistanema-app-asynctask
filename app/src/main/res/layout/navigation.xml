@@ -95,26 +95,69 @@
                 android:textColor="#242121"
                 android:textSize="18dp"
                 android:padding="8dp"
+
                 android:layout_gravity="right"
                 android:layout_marginRight="24dp"
                 android:text="بخش ها" />
-
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#dcdada" />
-
-            <ListView
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/navigationlistview">
+                android:textColor="#242121"
+                android:textSize="18dp"
+                android:id="@+id/txtafgnews"
+                android:padding="8dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="24dp"
+                android:text=" اخبار افغانستان و جهان" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#242121"
+                android:id="@+id/txtmohajerin"
+                android:textSize="18dp"
+                android:padding="8dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="24dp"
+                android:text=" اخبار مهاجرین" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtvariousnews"
+                android:layout_height="wrap_content"
+                android:textColor="#242121"
+                android:textSize="18dp"
+                android:padding="8dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="24dp"
+                android:text="اخبار گوناگون " />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#242121"
+                android:textSize="18dp"
+                android:id="@+id/txtsport"
+                android:padding="8dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="24dp"
+                android:text="اخبارورزشی افغانستان" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#242121"
+                android:textSize="18dp"
+                android:id="@+id/txtscience"
+                android:padding="8dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="24dp"
+                android:text="علم و فناوری" />
 
-            </ListView>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#dcdada" />
+
+
+
 
 
 

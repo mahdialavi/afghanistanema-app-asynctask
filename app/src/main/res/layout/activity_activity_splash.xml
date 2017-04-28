@@ -21,10 +21,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Base.Widget.AppCompat.ProgressBar" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ali"
-        android:id="@+id/ali"
-        />
+
 </LinearLayout>

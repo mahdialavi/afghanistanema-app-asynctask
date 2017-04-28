@@ -8,6 +8,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:name=".G"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -18,7 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity_AfNews" />
+        <activity android:name=".Activity_mohajerin" />
+        <activity android:name=".Activity_VariousNews" />
+        <activity android:name=".Activity_SportNews" />
+        <activity android:name=".Activity_Science"></activity>
     </application>
 
 </manifest>
