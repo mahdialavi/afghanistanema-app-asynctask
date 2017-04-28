@@ -36,7 +36,7 @@ public class recyclenewsAdaptor extends RecyclerView.Adapter<viewholder>{
 
 
         Picasso.with(G.context).load("http://192.168.1.201/afgApp/"+recycleinfo.img).into(holder.img);
-     //   Picasso.with(G.context).load("http://afghanistanema.com/"+recycleinfo.img).into(holder.img);
+        Picasso.with(G.context).load("http://afghanistanema.com/"+recycleinfo.img).into(holder.img);
     }
 
     @Override
