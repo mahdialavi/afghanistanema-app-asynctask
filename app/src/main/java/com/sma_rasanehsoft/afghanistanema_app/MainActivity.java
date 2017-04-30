@@ -1,11 +1,11 @@
 package com.sma_rasanehsoft.afghanistanema_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     ArrayList<recycleinfo> recylerinfos;
     ArrayList<String>recycleTitle ;
     ArrayList<String> recycleimg;
+    ArrayList<String> recycleId;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +63,8 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         txtafgnews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, Activity_AfNews.class);
-//                startActivity(intent);
-              //  Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, Activity_afnew_wait.class);
+                startActivity(intent);
 
             }
         });
@@ -99,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
         recycleimg = new ArrayList<>();
         recycleTitle = new ArrayList<>();
+        recycleId = new ArrayList<>();
         recylerinfos = new ArrayList<>();
         hambergurmenu = (ImageView) findViewById(R.id.hambergurmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
@@ -109,31 +112,29 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         recyclenews.setHasFixedSize(true);
         recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
 
-
-
-
-
         try {
             JSONObject jsonObject=new JSONObject(data);
 
             JSONArray jsonTitle=jsonObject.getJSONArray("title");
            JSONArray jsonPic=jsonObject.getJSONArray("pics");
+           JSONArray jsonId=jsonObject.getJSONArray("id");
          //  Toast.makeText(MainActivity.this, jsonPic+"", Toast.LENGTH_SHORT).show();
 
-          Log.i("LOG", jsonPic+"");
+        //  Log.i("LOG", jsonPic+"");
    for (int i=0;i<jsonTitle.length();i++){
               recycleimg.add(jsonPic.getString(i));
                  recycleTitle.add(jsonTitle.getString(i));
+                 recycleId.add(jsonId.getString(i));
             }
 
             for (int i=0;i<recycleTitle.size();i++){
 
                 recycleinfo recycleinfo = new recycleinfo();
                 recycleinfo.title = recycleTitle.get(i);
-             recycleinfo.img = recycleimg.get(i);
+                recycleinfo.img = recycleimg.get(i);
+                recycleinfo.Id = recycleId.get(i);
 
                 recylerinfos.add(recycleinfo);
-
             }
             recyclenews.setAdapter(new recyclenewsAdaptor(recylerinfos) );
 

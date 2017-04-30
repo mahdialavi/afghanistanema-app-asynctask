@@ -1,6 +1,6 @@
 <android.support.v7.widget.Toolbar
     android:layout_width="match_parent"
-    android:background="#f01010"
+    android:background="#be0b0b"
     android:layout_height="?attr/actionBarSize"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -31,7 +31,7 @@
         <LinearLayout
             android:layout_gravity="right"
             android:padding="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.4"
             android:orientation="horizontal"
             android:gravity="left"
             android:layout_width="0dp"
@@ -40,10 +40,10 @@
             <ImageView
                 android:layout_marginRight="32dp"
                 android:scaleType="fitCenter"
-                android:layout_width="140dp"
+                android:layout_width="120dp"
                 android:id="@+id/afglogo"
                 android:src="@drawable/afghanistanema"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp" />
             <ImageView
                 android:layout_marginRight="32dp"
                 android:scaleType="centerCrop"
