@@ -7,17 +7,13 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Activity_afnew_wait extends AppCompatActivity {
+public class ActivitySportWait extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_afnew_wait);
-
-//        Bundle bundle = getIntent().getExtras();
-//        String id = bundle.getString("id");
-
-        new AsyncTaskAfg("http://192.168.1.201/afgApp/afgnews.php").execute();
+        setContentView(R.layout.activity_sport_wait);
+        new AsyncTaskSport("http://192.168.1.201/afgApp/sport.php").execute();
         final Timer timer=new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -26,8 +22,8 @@ public class Activity_afnew_wait extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        if(!Activity_AfNews.afgnews.equals("")){
-                            Intent intent=new Intent(G.context,Activity_AfNews.class);
+                        if(!Activity_Sport.data.equals("")){
+                            Intent intent=new Intent(G.context,Activity_Sport.class);
                             startActivity(intent);
                             timer.cancel();
                             finish();
@@ -36,5 +32,7 @@ public class Activity_afnew_wait extends AppCompatActivity {
                 });
             }
         },1,1000);
+
     }
+
 }

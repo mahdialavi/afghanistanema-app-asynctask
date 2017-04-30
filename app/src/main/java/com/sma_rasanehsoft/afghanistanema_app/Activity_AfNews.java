@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.logging.Handler;
 
 public class Activity_AfNews extends AppCompatActivity {
-    public static String data = "";
     public static String afgnews = "";
 
     ImageView slider;
@@ -43,8 +42,7 @@ public class Activity_AfNews extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__af_news);
 
-
-      Toast.makeText(Activity_AfNews.this,data, Toast.LENGTH_SHORT).show();
+    //  Toast.makeText(Activity_AfNews.this,afgnews, Toast.LENGTH_SHORT).show();
         slider = (ImageView) findViewById(R.id.slider);
 
         recycleimg = new ArrayList<>();
@@ -55,60 +53,27 @@ public class Activity_AfNews extends AppCompatActivity {
         manager = new LinearLayoutManager(this);
         recyclenews.setHasFixedSize(true);
         recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
-//        try {
-//            JSONObject jsonObject=new JSONObject(data);
-//
-//            JSONArray jsonTitle=jsonObject.getJSONArray("title");
-//            JSONArray jsonPic=jsonObject.getJSONArray("pics");
-//          //  JSONArray jsonId=jsonObject.getJSONArray("id");
-//            // Toast.makeText(G.context, jsonTitle+""+jsonPic, Toast.LENGTH_SHORT).show();
-//
-//            //  Log.i("LOG", jsonPic+"");
-//            for (int i=0;i<jsonTitle.length();i++){
-//                recycleimg.add(jsonPic.getString(i));
-//                recycleTitle.add(jsonTitle.getString(i));
-//                //recycleId.add(jsonId.getString(i));
-//            }
-//
-//            for (int i=0;i<recycleTitle.size();i++){
-//                recycleinfo recycleinfo = new recycleinfo();
-//                recycleinfo.title = recycleTitle.get(i);
-//                recycleinfo.img = recycleimg.get(i);
-//            //    recycleinfo.Id = recycleId.get(i);
-//                recylerinfos.add(recycleinfo);
-//            }
-//            recyclenews.setAdapter(new recyclenewsAdaptor(recylerinfos) );
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        urlpics = new ArrayList();
-//        names = new ArrayList();
-//        hambergurmenu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                drawerLayout.openDrawer(Gravity.RIGHT);
-//            }
-//        });
+
         try {
             JSONObject jsonObject=new JSONObject(afgnews);
 
             JSONArray jsonTitleaf=jsonObject.getJSONArray("title");
             JSONArray jsonPicaf=jsonObject.getJSONArray("pics");
-            //  JSONArray jsonId=jsonObject.getJSONArray("id");
-           Toast.makeText(G.context, jsonTitleaf+"", Toast.LENGTH_SHORT).show();
+           JSONArray jsonId=jsonObject.getJSONArray("id");
+          Toast.makeText(G.context, jsonId+"", Toast.LENGTH_SHORT).show();
 
             //  Log.i("LOG", jsonPic+"");
             for (int i=0;i<jsonTitleaf.length();i++){
                 recycleimg.add(jsonPicaf.getString(i));
                 recycleTitle.add(jsonTitleaf.getString(i));
-                //recycleId.add(jsonId.getString(i));
+                 recycleId.add(jsonId.getString(i));
             }
 
             for (int i=0;i<recycleTitle.size();i++){
                 recycleinfo recycleinfo = new recycleinfo();
                 recycleinfo.title = recycleTitle.get(i);
                 recycleinfo.img = recycleimg.get(i);
-                //    recycleinfo.Id = recycleId.get(i);
+                recycleinfo.Id = recycleId.get(i);
                 recylerinfos.add(recycleinfo);
             }
             recyclenews.setAdapter(new recyclenewsAdaptor(recylerinfos) );

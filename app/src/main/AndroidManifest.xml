@@ -21,13 +21,18 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity_AfNews" />
-        <activity android:name=".Activity_mohajerin" />
         <activity android:name=".Activity_VariousNews" />
-        <activity android:name=".Activity_SportNews" />
-        <activity android:name=".Activity_Science" />
         <activity android:name=".Activity_Full_Text" />
         <activity android:name=".ActivityWait_full_Text" />
-        <activity android:name=".Activity_afnew_wait"></activity>
+        <activity android:name=".Activity_afnew_wait" />
+        <activity android:name=".Activity_mohajer_Wait" />
+        <activity android:name=".Activity_mohajer_news" />
+        <activity android:name=".Activity_various_news" />
+        <activity android:name=".Activity_various_wait" />
+        <activity android:name=".Activity_Sport" />
+        <activity android:name=".ActivityScience" />
+        <activity android:name=".ActivitySportWait" />
+        <activity android:name=".AcitivitySienceWait"></activity>
     </application>
 
 </manifest>

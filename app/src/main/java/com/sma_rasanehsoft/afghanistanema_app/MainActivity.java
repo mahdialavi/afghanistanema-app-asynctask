@@ -68,37 +68,38 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
             }
         });
-//        txtmohajerin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent2 = new Intent(G.context, Activity_mohajerin.class);
-//                startActivity(intent2);
-//
-//            }
-//        });
-//        txtvariousnews.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent3 = new Intent(G.context, Activity_VariousNews.class);
-//                startActivity(intent3);            }
-//        });
-//        txtsport.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent4 = new Intent(G.context, Activity_SportNews.class);
-//                startActivity(intent4);            }
-//        });
-//        txtscience.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent5 = new Intent(G.context, Activity_Science.class);
-//                startActivity(intent5);            }
-//        });
+        txtmohajerin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Activity_mohajer_Wait.class);
+                startActivity(intent);
 
+            }
+        });
+        txtvariousnews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Activity_various_wait.class);
+                startActivity(intent);
 
-//        Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
-//        Log.i("images", data);
+            }
+        });
+        txtsport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ActivitySportWait.class);
+                startActivity(intent);
 
+            }
+        });
+        txtscience.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AcitivitySienceWait.class);
+                startActivity(intent);
+
+            }
+        });
         recycleimg = new ArrayList<>();
         recycleTitle = new ArrayList<>();
         recycleId = new ArrayList<>();
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             JSONArray jsonTitle=jsonObject.getJSONArray("title");
            JSONArray jsonPic=jsonObject.getJSONArray("pics");
            JSONArray jsonId=jsonObject.getJSONArray("id");
-         //  Toast.makeText(MainActivity.this, jsonPic+"", Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(MainActivity.this, jsonPic+"", Toast.LENGTH_LONG).show();
 
         //  Log.i("LOG", jsonPic+"");
    for (int i=0;i<jsonTitle.length();i++){
@@ -137,11 +138,9 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                 recylerinfos.add(recycleinfo);
             }
             recyclenews.setAdapter(new recyclenewsAdaptor(recylerinfos) );
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         urlpics = new ArrayList();
         names = new ArrayList();
 

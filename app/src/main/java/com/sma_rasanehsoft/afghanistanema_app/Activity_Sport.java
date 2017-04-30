@@ -17,8 +17,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.logging.Handler;
 
-public class Activity_VariousNews extends AppCompatActivity {
-
+public class Activity_Sport extends AppCompatActivity {
     public static String data = "";
 
     ImageView slider;
@@ -28,23 +27,22 @@ public class Activity_VariousNews extends AppCompatActivity {
     public static Handler handler;
     RecyclerView recyclenews;
 
-
-
-    SliderLayout sliderShow;
-    DrawerLayout drawerLayout;
-    ImageView hambergurmenu;
-    ArrayList<recycleinfo> recylerinfos;
-    ArrayList<String>recycleTitle ;
-    ArrayList<String> recycleimg;
-    ArrayList<String> recycleId;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity__various_news);
+        setContentView(R.layout.activity__sport);
 
-            //  Toast.makeText(Activity_AfNews.this,afgnews, Toast.LENGTH_SHORT).show();
+
+
+        SliderLayout sliderShow;
+        DrawerLayout drawerLayout;
+        ImageView hambergurmenu;
+        ArrayList<recycleinfo> recylerinfos;
+        ArrayList<String>recycleTitle ;
+        ArrayList<String> recycleimg;
+        ArrayList<String> recycleId;
+
+                   //  Toast.makeText(Activity_AfNews.this,afgnews, Toast.LENGTH_SHORT).show();
             slider = (ImageView) findViewById(R.id.slider);
 
             recycleimg = new ArrayList<>();
@@ -59,15 +57,15 @@ public class Activity_VariousNews extends AppCompatActivity {
             try {
                 JSONObject jsonObject=new JSONObject(data);
 
-                JSONArray jsonTitlevarious=jsonObject.getJSONArray("title");
+                JSONArray jsonTitleaf=jsonObject.getJSONArray("title");
                 JSONArray jsonPicaf=jsonObject.getJSONArray("pics");
                 JSONArray jsonId=jsonObject.getJSONArray("id");
-                Toast.makeText(G.context, jsonTitlevarious+"", Toast.LENGTH_SHORT).show();
+                Toast.makeText(G.context, jsonId+"", Toast.LENGTH_SHORT).show();
 
                 //  Log.i("LOG", jsonPic+"");
-                for (int i=0;i<jsonTitlevarious.length();i++){
+                for (int i=0;i<jsonTitleaf.length();i++){
                     recycleimg.add(jsonPicaf.getString(i));
-                    recycleTitle.add(jsonTitlevarious.getString(i));
+                    recycleTitle.add(jsonTitleaf.getString(i));
                     recycleId.add(jsonId.getString(i));
                 }
 
@@ -83,6 +81,5 @@ public class Activity_VariousNews extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
 
 }
