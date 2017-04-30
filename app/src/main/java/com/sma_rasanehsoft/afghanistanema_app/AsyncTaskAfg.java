@@ -12,12 +12,10 @@ import java.net.URLConnection;
  */
 public class AsyncTaskAfg extends AsyncTask {
     public String link="";
-//   public String id="";
 
 
     public AsyncTaskAfg(String link){
         this.link=link;
-//        this.id=id;
 
     }
 
@@ -28,18 +26,9 @@ public class AsyncTaskAfg extends AsyncTask {
     protected Object doInBackground(Object[] params) {
 
         try{
-//        String data= URLEncoder.encode("id","UTF8")+"="+URLEncoder.encode(id,"UTF8");
 
             URL url=new URL(link);
             URLConnection connection=url.openConnection();
-
-//            connection.setDoOutput(true);
-//            OutputStreamWriter writer=new OutputStreamWriter(connection.getOutputStream());
-//            writer.write(data);
-//            writer.flush();
-
-
-
 
             BufferedReader reader=new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuilder builder=new StringBuilder();

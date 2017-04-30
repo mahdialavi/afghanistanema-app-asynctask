@@ -1,8 +1,8 @@
 package com.sma_rasanehsoft.afghanistanema_app;
 
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
@@ -41,11 +41,6 @@ public class ActivityScience extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_science);
 
-
-
-
-
-            //  Toast.makeText(Activity_AfNews.this,afgnews, Toast.LENGTH_SHORT).show();
             slider = (ImageView) findViewById(R.id.slider);
 
             recycleimg = new ArrayList<>();
@@ -55,7 +50,7 @@ public class ActivityScience extends AppCompatActivity {
             recyclenews = (RecyclerView) findViewById(R.id.recyclerNews);
             manager = new LinearLayoutManager(this);
             recyclenews.setHasFixedSize(true);
-            recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
+            recyclenews.setLayoutManager(manager);
 
             try {
                 JSONObject jsonObject=new JSONObject(data);
@@ -63,9 +58,8 @@ public class ActivityScience extends AppCompatActivity {
                 JSONArray jsonTitleaf=jsonObject.getJSONArray("title");
                 JSONArray jsonPicaf=jsonObject.getJSONArray("pics");
                 JSONArray jsonId=jsonObject.getJSONArray("id");
-                Toast.makeText(G.context, jsonId+"", Toast.LENGTH_SHORT).show();
 
-                //  Log.i("LOG", jsonPic+"");
+                Toast.makeText(ActivityScience.this, data, Toast.LENGTH_SHORT).show();
                 for (int i=0;i<jsonTitleaf.length();i++){
                     recycleimg.add(jsonPicaf.getString(i));
                     recycleTitle.add(jsonTitleaf.getString(i));

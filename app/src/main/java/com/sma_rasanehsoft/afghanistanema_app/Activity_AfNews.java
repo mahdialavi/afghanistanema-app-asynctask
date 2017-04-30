@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
 
@@ -60,7 +59,7 @@ public class Activity_AfNews extends AppCompatActivity {
             JSONArray jsonTitleaf=jsonObject.getJSONArray("title");
             JSONArray jsonPicaf=jsonObject.getJSONArray("pics");
            JSONArray jsonId=jsonObject.getJSONArray("id");
-          Toast.makeText(G.context, jsonId+"", Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(G.context, jsonId+"", Toast.LENGTH_SHORT).show();
 
             //  Log.i("LOG", jsonPic+"");
             for (int i=0;i<jsonTitleaf.length();i++){

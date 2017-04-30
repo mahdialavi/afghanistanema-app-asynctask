@@ -27,7 +27,6 @@
         <activity android:name=".Activity_afnew_wait" />
         <activity android:name=".Activity_mohajer_Wait" />
         <activity android:name=".Activity_mohajer_news" />
-        <activity android:name=".Activity_various_news" />
         <activity android:name=".Activity_various_wait" />
         <activity android:name=".Activity_Sport" />
         <activity android:name=".ActivityScience" />
