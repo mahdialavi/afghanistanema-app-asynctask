@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -49,11 +48,13 @@ class viewholder extends RecyclerView.ViewHolder{
 
     public ImageView img;
     public TextView title;
+    public TextView date;
     public String Id="";
     public LinearLayout linearLayout;
     public viewholder(View itemView) {
         super(itemView);
         img = (ImageView) itemView.findViewById(R.id.img);
+        date = (TextView) itemView.findViewById(R.id.date);
         title = (TextView) itemView.findViewById(R.id.title);
         linearLayout = (LinearLayout) itemView.findViewById(R.id.linearNews);
         linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +64,7 @@ class viewholder extends RecyclerView.ViewHolder{
                 intent.putExtra("id", Id);
                 intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 G.context.startActivity(intent);
-                Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
         
             }
         });

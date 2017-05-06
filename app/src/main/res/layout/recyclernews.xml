@@ -12,18 +12,21 @@
         android:layout_height="90dp"
         android:orientation="horizontal"
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:layout_marginTop="20dp"
             android:id="@+id/title"
+            android:textColor="#606060"
             android:lineSpacingMultiplier="1.5"
             android:layout_marginLeft="0dp"
-            android:textSize="16dp"
+            android:textSize="15dp"
             android:layout_marginRight="6dp"
-            android:text="آخرین اخبار روز دنیا و افغان"
+            android:text="آخرین اخبار روز دنیا و افغآخرین اخبار روز دنیا و افغآخرین اخبار روز دنیا و افغان"
             />
+
 
         <ImageView
             android:layout_width="100dp"
@@ -37,4 +40,16 @@
         android:background="#d9d9d9"
         android:padding="5dp"
         android:layout_height="1dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="left"
+        android:gravity="left"
+         android:layout_marginTop="-20dp"
+        android:textColor="#a39f9f"
+        android:id="@+id/date"
+        android:layout_marginLeft="10dp"
+        android:textSize="12dp"
+        android:text="2017-04-19 17:27:35"
+        />
 </LinearLayout>

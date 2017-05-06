@@ -7,4 +7,5 @@ public class recycleinfo {
     public String img;
     public String title;
     public String Id;
+    public String date;
 }
