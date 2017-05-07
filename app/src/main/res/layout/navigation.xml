@@ -19,14 +19,15 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#F5363E"
+                android:background="#b9151c"
                 android:layoutDirection="rtl" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:background="#F5363E"
+                android:background="#b9151c"
                 android:orientation="horizontal"
                 android:gravity="right"
+                android:id="@+id/btnregister"
                 android:layout_height="60dp">
 
                 <TextView

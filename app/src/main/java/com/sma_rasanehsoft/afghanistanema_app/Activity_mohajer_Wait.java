@@ -14,7 +14,7 @@ public class Activity_mohajer_Wait extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mohajer__wait);
 
-                new AsyncTaskmohajer("http://192.168.1.201/afgApp/getrefugee.php").execute();
+                new AsyncTaskmohajer("http://afghanistanema.com/afgApp/getrefugee.php").execute();
                 final Timer timer=new Timer();
                 timer.scheduleAtFixedRate(new TimerTask() {
                     @Override

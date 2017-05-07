@@ -31,9 +31,6 @@ public class AsynkTaskfulltext extends AsyncTask {
     protected Object doInBackground(Object[] params) {
 
         try{
-
-
-
             String data= URLEncoder.encode("id","UTF8")+"="+URLEncoder.encode(id,"UTF8");
 
             URL url=new URL(link);
@@ -43,10 +40,6 @@ public class AsynkTaskfulltext extends AsyncTask {
             OutputStreamWriter writer=new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
             writer.flush();
-
-
-
-
             BufferedReader reader=new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuilder builder=new StringBuilder();
 

@@ -13,7 +13,7 @@ public class ActivitySportWait extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport_wait);
-        new AsyncTaskSport("http://192.168.1.201/afgApp/sport.php").execute();
+        new AsyncTaskSport("http://afghanistanema.com/afgApp/sport.php").execute();
         final Timer timer=new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override

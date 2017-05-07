@@ -1,12 +1,13 @@
 package com.sma_rasanehsoft.afghanistanema_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
 
@@ -51,6 +52,14 @@ public class ActivityScience extends AppCompatActivity {
             manager = new LinearLayoutManager(this);
             recyclenews.setHasFixedSize(true);
             recyclenews.setLayoutManager(manager);
+        hambergurmenu = (ImageView) findViewById(R.id.back);
+        hambergurmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(G.context, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
             try {
                 JSONObject jsonObject=new JSONObject(data);
@@ -59,7 +68,7 @@ public class ActivityScience extends AppCompatActivity {
                 JSONArray jsonPicaf=jsonObject.getJSONArray("pics");
                 JSONArray jsonId=jsonObject.getJSONArray("id");
 
-                Toast.makeText(ActivityScience.this, data, Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(ActivityScience.this, data, Toast.LENGTH_SHORT).show();
                 for (int i=0;i<jsonTitleaf.length();i++){
                     recycleimg.add(jsonPicaf.getString(i));
                     recycleTitle.add(jsonTitleaf.getString(i));

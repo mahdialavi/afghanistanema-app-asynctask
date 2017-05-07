@@ -14,7 +14,7 @@ public class AcitivitySienceWait extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivity_sience_wait);
 
-        new AsynkTaskSience("http://192.168.1.201/afgApp/science.php").execute();
+        new AsynkTaskSience("http://afghanistanema.com/afgApp/science.php").execute();
         final Timer timer=new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override

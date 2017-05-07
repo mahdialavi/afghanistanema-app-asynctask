@@ -11,7 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
@@ -27,6 +29,8 @@ import java.util.ArrayList;
 import java.util.logging.Handler;
 
 public class MainActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+    private static long back_pressed;
+    private static final int TIME_DELAY = 2000;
 
     public static String data = "";
     ArrayList<String> urlpics;
@@ -42,10 +46,12 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     TextView txtvariousnews;
     TextView txtsport;
     TextView txtscience;
+    LinearLayout linearRegister;
 
     SliderLayout sliderShow;
     DrawerLayout drawerLayout;
     ImageView hambergurmenu;
+    ImageView imgsearch;
     ArrayList<recycleinfo> recylerinfos;
     ArrayList<String> recycleTitle;
     ArrayList<String> recycleimg;
@@ -64,7 +70,18 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         txtvariousnews = (TextView) findViewById(R.id.txtvariousnews);
         txtsport = (TextView) findViewById(R.id.txtsport);
         txtscience = (TextView) findViewById(R.id.txtscience);
+        linearRegister = (LinearLayout) findViewById(R.id.btnregister);
 
+//        onBackpressed();
+//
+
+
+        linearRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "مهمان گرامی بخش ورود و ثبت نام در حال حاضر غیر فعال میباشد!", Toast.LENGTH_LONG).show();
+            }
+        });
         txtafgnews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AcitivitySienceWait.class);
                 startActivity(intent);
-
             }
         });
         recycleimg = new ArrayList<>();
@@ -111,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         recycledate = new ArrayList<>();
         recylerinfos = new ArrayList<>();
         hambergurmenu = (ImageView) findViewById(R.id.hambergurmenu);
+        imgsearch = (ImageView) findViewById(R.id.imgsearch);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         sliderShow = (SliderLayout) findViewById(R.id.slider);
         sliderShow.setDuration(10000);
@@ -121,6 +138,14 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
         sliderShow.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
         //sliderShow.setPresetIndicator(PagerIndicator.SCROLL_INDICATOR_START);
+
+        imgsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "امکان جست و جو فعلا ممکن نیست!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
         try {
@@ -164,10 +189,13 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 //        urlpics.add("http://192.168.1.201/afgApp/images/akhbar/5/q103.jpg");
         //names.add("Phone");
 
+
         for (int i = 0; i < 1; i++) {
+           // Toast.makeText(MainActivity.this,recycleimg.get(i), Toast.LENGTH_SHORT).show();
+
             TextSliderView textSliderView = new TextSliderView(this);
             textSliderView.description(recycleTitle.get(i));
-            textSliderView.image("http://192.168.1.201/afgApp/" + recycleimg.get(i));
+            textSliderView.image("http://afghanistanema.com/" + recycleimg.get(i));
             textSliderView.setScaleType(BaseSliderView.ScaleType.Fit).setOnSliderClickListener(this);
             //textSliderView.description("Game of Thrones").image("http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
             sliderShow.addSlider(textSliderView);
@@ -176,8 +204,16 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         }
     }
 
+
+
+
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        if (positionOffset > -100){
+
+            Toast.makeText(MainActivity.this, "ali", Toast.LENGTH_SHORT).show();
+        }
 
     }
     @Override
@@ -199,6 +235,30 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
          intent2.putExtra("id", id);
          startActivity(intent2);
      }
-
     }
+    @Override
+    public void onBackPressed() {
+        if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
+            super.onBackPressed();
+        } else {
+            Toast.makeText(getBaseContext(), "برای خروج از برنامه دکمه بازگشت را بزنید!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        back_pressed = System.currentTimeMillis();
+    }
+
+//    public void onBackpressed(){
+//
+//        new AlertDialog.Builder(this)
+//                .setTitle("Really Exit?")
+//                .setMessage("Are you sure you want to exit?")
+//                .setNegativeButton(android.R.string.no, null)
+//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//
+//                    public void onClick(DialogInterface arg0, int arg1) {
+//                        MainActivity.super.onBackPressed();
+//                    }
+//                }).create().show();
+//
+//    }
 }

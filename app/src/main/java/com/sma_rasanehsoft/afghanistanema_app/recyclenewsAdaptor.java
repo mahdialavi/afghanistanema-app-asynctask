@@ -35,7 +35,7 @@ public class recyclenewsAdaptor extends RecyclerView.Adapter<viewholder>{
         recycleinfo recycleinfo = recycleinfos.get(position);
         holder.title.setText(recycleinfo.title);
         holder.Id = recycleinfo.Id;
-      Picasso.with(G.context).load("http://192.168.1.201/afgApp/"+recycleinfo.img).into(holder.img);
+      Picasso.with(G.context).load("http://afghanistanema.com/"+recycleinfo.img).into(holder.img);
      //   Picasso.with(G.context).load("http://afghanistanema.com/"+recycleinfo.img).into(holder.img);
     }
 
@@ -57,6 +57,8 @@ class viewholder extends RecyclerView.ViewHolder{
         date = (TextView) itemView.findViewById(R.id.date);
         title = (TextView) itemView.findViewById(R.id.title);
         linearLayout = (LinearLayout) itemView.findViewById(R.id.linearNews);
+
+
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +66,7 @@ class viewholder extends RecyclerView.ViewHolder{
                 intent.putExtra("id", Id);
                 intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 G.context.startActivity(intent);
-               // Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
+             // Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
         
             }
         });

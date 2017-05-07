@@ -14,7 +14,7 @@ public class Activity_various_wait extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_various_wait);
 
-        new AsynkTastvarious("http://192.168.1.201/afgApp/getvarious.php").execute();
+        new AsynkTastvarious("http://afghanistanema.com/afgApp/getvarious.php").execute();
         final Timer timer=new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override

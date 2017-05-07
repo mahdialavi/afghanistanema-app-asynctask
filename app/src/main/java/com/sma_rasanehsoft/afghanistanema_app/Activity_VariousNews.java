@@ -1,10 +1,12 @@
 package com.sma_rasanehsoft.afghanistanema_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.daimajia.slider.library.SliderLayout;
@@ -54,6 +56,14 @@ public class Activity_VariousNews extends AppCompatActivity {
             manager = new LinearLayoutManager(this);
             recyclenews.setHasFixedSize(true);
             recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
+            hambergurmenu = (ImageView) findViewById(R.id.back);
+            hambergurmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(G.context, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
             try {
                 JSONObject jsonObject=new JSONObject(data);

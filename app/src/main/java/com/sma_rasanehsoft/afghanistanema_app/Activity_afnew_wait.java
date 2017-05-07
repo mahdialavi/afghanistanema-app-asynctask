@@ -17,7 +17,7 @@ public class Activity_afnew_wait extends AppCompatActivity {
 //        Bundle bundle = getIntent().getExtras();
 //        String id = bundle.getString("id");
 
-        new AsyncTaskAfg("http://192.168.1.201/afgApp/afgnews.php").execute();
+        new AsyncTaskAfg("http://afghanistanema.com/afgApp/afgnews.php").execute();
         final Timer timer=new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override

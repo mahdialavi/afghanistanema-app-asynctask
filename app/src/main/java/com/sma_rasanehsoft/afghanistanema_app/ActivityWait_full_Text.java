@@ -16,7 +16,7 @@ public class ActivityWait_full_Text extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String id = bundle.getString("id");
-        new AsynkTaskfulltext("http://192.168.1.201/afgApp/getfulltxt.php",id).execute();
+        new AsynkTaskfulltext("http://afghanistanema.com/afgApp/getfulltxt.php",id).execute();
         final Timer timer=new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override

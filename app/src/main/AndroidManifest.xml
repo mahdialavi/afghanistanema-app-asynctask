@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".G"
@@ -12,14 +13,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_splash">
+        <activity android:name=".Activity_splash"
+        android:theme="@style/splashtheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".Activity_AfNews" />
         <activity android:name=".Activity_VariousNews" />
         <activity android:name=".Activity_Full_Text" />
@@ -31,7 +33,8 @@
         <activity android:name=".Activity_Sport" />
         <activity android:name=".ActivityScience" />
         <activity android:name=".ActivitySportWait" />
-        <activity android:name=".AcitivitySienceWait"></activity>
+        <activity android:name=".AcitivitySienceWait" />
+        <activity android:name=".Connectivity"></activity>
     </application>
 
 </manifest>

@@ -12,7 +12,6 @@ import java.net.URLConnection;
  */
 public class AsyncTaskmohajer extends AsyncTask {
     public String link="";
-//   public String id="";
 
 
     public AsyncTaskmohajer(String link){
