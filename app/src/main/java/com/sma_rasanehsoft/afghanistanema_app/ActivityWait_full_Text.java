@@ -14,9 +14,12 @@ public class ActivityWait_full_Text extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wait_full__text);
 
+        Activity_Full_Text.data="";
+
         Bundle bundle = getIntent().getExtras();
         String id = bundle.getString("id");
         new AsynkTaskfulltext("http://afghanistanema.com/afgApp/getfulltxt.php",id).execute();
+
         final Timer timer=new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -25,6 +28,7 @@ public class ActivityWait_full_Text extends AppCompatActivity {
                     @Override
                     public void run() {
                         if(!Activity_Full_Text.data.equals("")){
+
                             Intent intent=new Intent(G.context,Activity_Full_Text.class);
                             startActivity(intent);
                             timer.cancel();
@@ -35,4 +39,10 @@ public class ActivityWait_full_Text extends AppCompatActivity {
             }
         },1,1000);
     }
+
+
+
+
+
+
 }
