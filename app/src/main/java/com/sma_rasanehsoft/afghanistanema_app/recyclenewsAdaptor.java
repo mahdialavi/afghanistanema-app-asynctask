@@ -59,8 +59,6 @@ class viewholder extends RecyclerView.ViewHolder{
         date = (TextView) itemView.findViewById(R.id.date);
         title = (TextView) itemView.findViewById(R.id.title);
         linearLayout = (LinearLayout) itemView.findViewById(R.id.linearNews);
-
-
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
