@@ -241,5 +241,18 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         }
         back_pressed = System.currentTimeMillis();
     }
-
+//    public void onBackpressed(){
+//
+//        new AlertDialog.Builder(this)
+//                .setTitle("Really Exit?")
+//                .setMessage("Are you sure you want to exit?")
+//                .setNegativeButton(android.R.string.no, null)
+//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+// public void onClick(DialogInterface arg0, int arg1) {
+//                        MainActivity.super.onBackPressed();
+//                    }
+//                }).create().show();
+//
+    
+//    }
 }
