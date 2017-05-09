@@ -23,10 +23,6 @@ public class AsynkTaskfulltext extends AsyncTask {
         this.id=id;
 
     }
-
-
-
-
     @Override
     protected Object doInBackground(Object[] params) {
 

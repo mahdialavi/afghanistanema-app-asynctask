@@ -24,11 +24,13 @@ public class recyclenewsAdaptor extends RecyclerView.Adapter<viewholder>{
 
     }
 
+
     @Override
     public viewholder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclernews, parent, false);
         return new viewholder(view);
     }
+
 
     @Override
     public void onBindViewHolder(viewholder holder, int position) {
@@ -66,11 +68,10 @@ class viewholder extends RecyclerView.ViewHolder{
                 intent.putExtra("id", Id);
                 intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 G.context.startActivity(intent);
-             // Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
+       //Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
         
             }
         });
-
-
     }
+
 }
