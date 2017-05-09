@@ -14,17 +14,17 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorSplashAccent</item>
     </style>
-    <style name="ActivityShow" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/activityShowPrimry</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorSplashAccent</item>
-    </style>
-    <style name="ActivityWait" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/activitySplashAccent</item>
-        <item name="colorPrimaryDark">@color/activitySplashAccent</item>
-        <item name="colorAccent">@color/activityWaitAccent</item>
-    </style>
+    <!--<style name="ActivityShow" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/activityShowPrimry</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorSplashAccent</item>-->
+    <!--</style>-->
+    <!--<style name="ActivityWait" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/activitySplashAccent</item>-->
+        <!--<item name="colorPrimaryDark">@color/activitySplashAccent</item>-->
+        <!--<item name="colorAccent">@color/activityWaitAccent</item>-->
+    <!--</style>-->
 
 </resources>

@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
 
         for (int i = 0; i < 1; i++) {
-            // Toast.makeText(MainActivity.this,recycleimg.get(i), Toast.LENGTH_SHORT).show();
+           // Toast.makeText(MainActivity.this,recycleimg.get(i), Toast.LENGTH_SHORT).show();
 
             TextSliderView textSliderView = new TextSliderView(this);
             textSliderView.description(recycleTitle.get(i));
@@ -221,15 +221,15 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     }
     @Override
     public void onSliderClick(BaseSliderView slider) {
-        for (int i = 0; i <1; i++) {
-            String id = (String) slider.getBundle().get("id");
+     for (int i = 0; i <1; i++) {
+         String id = (String) slider.getBundle().get("id");
 
-            //   Toast.makeText(MainActivity.this,id, Toast.LENGTH_SHORT).show();
+      //   Toast.makeText(MainActivity.this,id, Toast.LENGTH_SHORT).show();
 //        }
-            Intent intent2 = new Intent(G.context, ActivityWait_full_Text.class);
-            intent2.putExtra("id", id);
-            startActivity(intent2);
-        }
+         Intent intent2 = new Intent(G.context, ActivityWait_full_Text.class);
+         intent2.putExtra("id", id);
+         startActivity(intent2);
+     }
     }
     @Override
     public void onBackPressed() {
@@ -253,6 +253,5 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 //                    }
 //                }).create().show();
 //
-
 //    }
 }
