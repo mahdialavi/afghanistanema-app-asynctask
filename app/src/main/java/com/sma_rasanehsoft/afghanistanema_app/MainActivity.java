@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     ArrayList<String> recycleimg;
     ArrayList<String> recycleId;
     ArrayList<String> recycledate;
+    Long height;
 
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -71,11 +72,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         txtsport = (TextView) findViewById(R.id.txtsport);
         txtscience = (TextView) findViewById(R.id.txtscience);
         linearRegister = (LinearLayout) findViewById(R.id.btnregister);
-
-//        onBackpressed();
-//
-
-
         linearRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Activity_afnew_wait.class);
                 startActivity(intent);
+
 
             }
         });
@@ -135,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         manager = new LinearLayoutManager(this);
         recyclenews.setHasFixedSize(true);
         recyclenews.setLayoutManager(manager);
+
         sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
         sliderShow.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
         //sliderShow.setPresetIndicator(PagerIndicator.SCROLL_INDICATOR_START);
@@ -145,9 +143,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                 Toast.makeText(MainActivity.this, "امکان جست و جو فعلا ممکن نیست!", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
         try {
             JSONObject jsonObject = new JSONObject(data);
 
@@ -241,6 +236,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         }
         back_pressed = System.currentTimeMillis();
     }
+
 //    public void onBackpressed(){
 //
 //        new AlertDialog.Builder(this)
