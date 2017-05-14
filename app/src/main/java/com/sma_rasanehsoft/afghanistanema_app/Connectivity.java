@@ -33,7 +33,6 @@ public class Connectivity extends AppCompatActivity {
                         Intent intent = new Intent(G.context, MainActivity.class);
                         startActivity(intent);
                     }
-
                 }else {
                     Toast.makeText(Connectivity.this, "اتصال به اینترنت برقرار نمی باشد!", Toast.LENGTH_SHORT).show();
                 }

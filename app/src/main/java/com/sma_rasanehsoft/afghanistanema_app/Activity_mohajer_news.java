@@ -49,6 +49,7 @@ public class Activity_mohajer_news extends AppCompatActivity {
             recycleId = new ArrayList<>();
             recylerinfos = new ArrayList<>();
             recyclenews = (RecyclerView) findViewById(R.id.recyclerNews);
+        recyclenews.setNestedScrollingEnabled(false);
             manager = new LinearLayoutManager(this);
             recyclenews.setHasFixedSize(true);
             recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);

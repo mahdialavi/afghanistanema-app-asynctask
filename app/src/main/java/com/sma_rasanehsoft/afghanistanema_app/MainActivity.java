@@ -2,6 +2,7 @@ package com.sma_rasanehsoft.afghanistanema_app;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     TextView txtafgnews;
     TextView txtmohajerin;
     TextView txtvariousnews;
+    TextView Email;
+
+
     TextView txtsport;
     TextView txtscience;
     LinearLayout linearRegister;
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         txtvariousnews = (TextView) findViewById(R.id.txtvariousnews);
         txtsport = (TextView) findViewById(R.id.txtsport);
         txtscience = (TextView) findViewById(R.id.txtscience);
+        Email = (TextView) findViewById(R.id.Email);
         linearRegister = (LinearLayout) findViewById(R.id.btnregister);
         linearRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,8 +88,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Activity_afnew_wait.class);
                 startActivity(intent);
-
-
             }
         });
         txtmohajerin.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Activity_mohajer_Wait.class);
                 startActivity(intent);
-
             }
         });
         txtvariousnews.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Activity_various_wait.class);
                 startActivity(intent);
-
             }
         });
         txtsport.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +109,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ActivitySportWait.class);
                 startActivity(intent);
-
             }
         });
         txtscience.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +116,29 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AcitivitySienceWait.class);
                 startActivity(intent);
+            }
+        });
+        Email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Email.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try{
+                            Intent intent=new Intent(Intent.ACTION_SENDTO);
+                            intent.setType("text/plain");
+                            intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"mdp.alavi@gmail.com"});
+//                            intent.putExtra(Intent.EXTRA_SUBJECT,);
+//                            intent.putExtra(Intent.EXTRA_TEXT,);
+                            intent.setData(Uri.parse("mailto:"));
+                            startActivity(intent);
+
+                        }catch (Exception e){
+
+                            Toast.makeText(G.context,"برنامه ای برای ارسال ایمیل یافت نشد",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
         recycleimg = new ArrayList<>();
@@ -129,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         sliderShow = (SliderLayout) findViewById(R.id.slider);
         sliderShow.setDuration(10000);
         recyclenews = (RecyclerView) findViewById(R.id.recyclerNews);
+        recyclenews.setNestedScrollingEnabled(false);
         manager = new LinearLayoutManager(this);
         recyclenews.setHasFixedSize(true);
         recyclenews.setLayoutManager(manager);
@@ -140,7 +164,8 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         imgsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "امکان جست و جو فعلا ممکن نیست!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, Activity_Search.class);
+                startActivity(intent);
             }
         });
         try {
@@ -181,10 +206,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                 drawerLayout.openDrawer(Gravity.RIGHT);
             }
         });
-//        urlpics.add("http://192.168.1.201/afgApp/images/akhbar/5/q103.jpg");
-        //names.add("Phone");
-
-
         for (int i = 0; i < 1; i++) {
            // Toast.makeText(MainActivity.this,recycleimg.get(i), Toast.LENGTH_SHORT).show();
 
@@ -198,10 +219,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             textSliderView.getBundle().putString("id", recycleId.get(i));
         }
     }
-
-
-
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 

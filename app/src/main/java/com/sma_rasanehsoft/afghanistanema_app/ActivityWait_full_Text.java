@@ -6,7 +6,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -47,18 +46,18 @@ public class ActivityWait_full_Text extends AppCompatActivity {
                 }
             }, 1, 1000);
         }else {
-            Intent intent=new Intent(G.context,Connectivity.class);
+            Intent intent=new Intent(G.context,Connectivitymenu.class);
             startActivity(intent);
         }
 
-    }   @Override
-    public void onBackPressed() {
-        if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
-            super.onBackPressed();
-        } else {
-            Toast.makeText(getBaseContext(), "برای خروج از برنامه دکمه بازگشت را بزنید!",
-                    Toast.LENGTH_SHORT).show();
-        }
-        back_pressed = System.currentTimeMillis();
-    }
+//    }   @Override
+//    public void onBackPressed() {
+//        if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
+//            super.onBackPressed();
+//        } else {
+//            Toast.makeText(getBaseContext(), "برای خروج از برنامه دکمه بازگشت را بزنید!",
+//                    Toast.LENGTH_SHORT).show();
+//        }
+//        back_pressed = System.currentTimeMillis();
+}
 }

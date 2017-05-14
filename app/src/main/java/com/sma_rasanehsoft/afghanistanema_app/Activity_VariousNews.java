@@ -55,6 +55,7 @@ public class Activity_VariousNews extends AppCompatActivity {
             recyclenews = (RecyclerView) findViewById(R.id.recyclerNews);
             manager = new LinearLayoutManager(this);
             recyclenews.setHasFixedSize(true);
+        recyclenews.setNestedScrollingEnabled(false);
             recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
             hambergurmenu = (ImageView) findViewById(R.id.back);
             hambergurmenu.setOnClickListener(new View.OnClickListener() {

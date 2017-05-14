@@ -52,6 +52,7 @@ public class ActivityScience extends AppCompatActivity {
             manager = new LinearLayoutManager(this);
             recyclenews.setHasFixedSize(true);
             recyclenews.setLayoutManager(manager);
+        recyclenews.setNestedScrollingEnabled(false);
         hambergurmenu = (ImageView) findViewById(R.id.back);
         hambergurmenu.setOnClickListener(new View.OnClickListener() {
             @Override

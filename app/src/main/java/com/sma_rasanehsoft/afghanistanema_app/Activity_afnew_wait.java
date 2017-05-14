@@ -28,7 +28,6 @@ public class Activity_afnew_wait extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
                         if(!Activity_AfNews.afgnews.equals("")){
                             Intent intent=new Intent(G.context,Activity_AfNews.class);
                             startActivity(intent);
@@ -39,8 +38,9 @@ public class Activity_afnew_wait extends AppCompatActivity {
                 });
             }
         },1,1000);
-        }else {
-            Intent intent=new Intent(G.context,Activity_AfNews.class);
+        }
+        else {
+            Intent intent=new Intent(G.context,Connectivitymenu.class);
             startActivity(intent);
         }
     }

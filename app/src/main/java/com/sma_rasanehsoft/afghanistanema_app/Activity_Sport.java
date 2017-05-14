@@ -53,7 +53,9 @@ public class Activity_Sport extends AppCompatActivity {
             recyclenews = (RecyclerView) findViewById(R.id.recyclerNews);
             manager = new LinearLayoutManager(this);
             recyclenews.setHasFixedSize(true);
-            recyclenews.setLayoutManager(manager);      //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
+            recyclenews.setLayoutManager(manager);
+        recyclenews.setNestedScrollingEnabled(false);
+        //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
         hambergurmenu = (ImageView) findViewById(R.id.back);
         hambergurmenu.setOnClickListener(new View.OnClickListener() {
             @Override
