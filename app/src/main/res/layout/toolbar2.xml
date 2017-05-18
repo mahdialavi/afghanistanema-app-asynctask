@@ -8,22 +8,17 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
         <LinearLayout
             android:layout_width="0dp"
             android:orientation="horizontal"
             android:layout_weight="0.3"
             android:layout_height="wrap_content">
-
             <ImageView
                 android:id="@+id/imgsearch"
                 android:layout_width="32dp"
 
                 android:scaleType="fitCenter"
                 android:layout_height="32dp" />
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -34,7 +29,6 @@
             android:gravity="left"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
-
             <ImageView
                 android:layout_marginRight="32dp"
                 android:scaleType="fitCenter"
@@ -46,15 +40,11 @@
                 android:layout_marginRight="32dp"
                 android:scaleType="centerCrop"
                 android:layout_width="32dp"
-
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/back2"
                 android:id="@+id/back"
                 android:layout_height="32dp" />
 
         </LinearLayout>
-
-
     </LinearLayout>
-
 </android.support.v7.widget.Toolbar>

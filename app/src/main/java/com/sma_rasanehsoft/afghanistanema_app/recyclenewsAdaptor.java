@@ -23,15 +23,11 @@ public class recyclenewsAdaptor extends RecyclerView.Adapter<viewholder>{
         this.recycleinfos=recycleinfos;
 
     }
-
-
     @Override
     public viewholder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclernews, parent, false);
         return new viewholder(view);
     }
-
-
     @Override
     public void onBindViewHolder(viewholder holder, int position) {
         recycleinfo recycleinfo = recycleinfos.get(position);
@@ -40,7 +36,6 @@ public class recyclenewsAdaptor extends RecyclerView.Adapter<viewholder>{
       Picasso.with(G.context).load("http://afghanistanema.com/"+recycleinfo.img).into(holder.img);
      //   Picasso.with(G.context).load("http://afghanistanema.com/"+recycleinfo.img).into(holder.img);
     }
-
     @Override
     public int getItemCount() {
         return recycleinfos.size();
@@ -71,6 +66,4 @@ class viewholder extends RecyclerView.ViewHolder{
             }
         });
     }
-
-
 }
