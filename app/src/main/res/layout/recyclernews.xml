@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,7 +10,7 @@
         android:gravity="right"
         android:id="@+id/linearNews"
         android:paddingLeft="5dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         >
 
@@ -17,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:id="@+id/title"
             android:layout_weight="0.7"
             android:textColor="#454545"

@@ -2,31 +2,31 @@ package com.sma_rasanehsoft.afghanistanema_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.daimajia.slider.library.SliderLayout;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.logging.Handler;
 
 public class Activity_Sport extends AppCompatActivity {
     public static String data = "";
 
     ImageView slider;
-    ArrayList<String> urlpics;
-    ArrayList<String> names;
     LinearLayoutManager manager;
-    public static Handler handler;
     RecyclerView recyclenews;
+
+
+    ImageView hambergurmenu;
+    ArrayList<recycleinfo> recylerinfos;
+    ArrayList<String>recycleTitle ;
+    ArrayList<String> recycleimg;
+    ArrayList<String> recycleId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,25 +35,16 @@ public class Activity_Sport extends AppCompatActivity {
 
 
 
-        SliderLayout sliderShow;
-        DrawerLayout drawerLayout;
-        ImageView hambergurmenu;
-        ArrayList<recycleinfo> recylerinfos;
-        ArrayList<String>recycleTitle ;
-        ArrayList<String> recycleimg;
-        ArrayList<String> recycleId;
+        slider = (ImageView) findViewById(R.id.slider);
 
-                   //  Toast.makeText(Activity_AfNews.this,afgnews, Toast.LENGTH_SHORT).show();
-            slider = (ImageView) findViewById(R.id.slider);
-
-            recycleimg = new ArrayList<>();
-            recycleTitle = new ArrayList<>();
-            recycleId = new ArrayList<>();
-            recylerinfos = new ArrayList<>();
-            recyclenews = (RecyclerView) findViewById(R.id.recyclerNews);
-            manager = new LinearLayoutManager(this);
-            recyclenews.setHasFixedSize(true);
-            recyclenews.setLayoutManager(manager);
+        recycleimg = new ArrayList<>();
+        recycleTitle = new ArrayList<>();
+        recycleId = new ArrayList<>();
+        recylerinfos = new ArrayList<>();
+        recyclenews = (RecyclerView) findViewById(R.id.recyclerNews);
+        manager = new LinearLayoutManager(this);
+        recyclenews.setHasFixedSize(true);
+        recyclenews.setLayoutManager(manager);
         recyclenews.setNestedScrollingEnabled(false);
         //  sliderShow.setPresetTransformer(SliderLayout.Transformer.Fade);
         hambergurmenu = (ImageView) findViewById(R.id.back);

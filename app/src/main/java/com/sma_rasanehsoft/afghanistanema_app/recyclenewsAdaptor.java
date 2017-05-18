@@ -66,7 +66,7 @@ class viewholder extends RecyclerView.ViewHolder{
                 intent.putExtra("id", Id);
                 intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 G.context.startActivity(intent);
-       //Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
+     // Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
         
             }
         });
