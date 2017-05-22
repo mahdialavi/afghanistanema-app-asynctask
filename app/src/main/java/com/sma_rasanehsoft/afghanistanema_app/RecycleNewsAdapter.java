@@ -16,12 +16,11 @@ import java.util.ArrayList;
 /**
  * Created by alavi on 4/20/2017.
  */
-public class recyclenewsAdaptor extends RecyclerView.Adapter<viewholder>{
+public class RecycleNewsAdapter extends RecyclerView.Adapter<viewholder>{
 
     ArrayList<recycleinfo> recycleinfos = new ArrayList<>();
-    public recyclenewsAdaptor(ArrayList<recycleinfo> recycleinfos){
+    public RecycleNewsAdapter(ArrayList<recycleinfo> recycleinfos){
         this.recycleinfos=recycleinfos;
-
     }
     @Override
     public viewholder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,6 +40,7 @@ public class recyclenewsAdaptor extends RecyclerView.Adapter<viewholder>{
         return recycleinfos.size();
     }
 }
+
 class viewholder extends RecyclerView.ViewHolder{
 
     public ImageView img;

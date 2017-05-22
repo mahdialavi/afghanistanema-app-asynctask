@@ -55,6 +55,7 @@
         <activity android:name=".Connectivity" />
         <activity android:name=".Connectivitymenu" />
         <activity android:name=".Activity_Search" />
+        <activity android:name=".SearchWait" />
     </application>
 
 </manifest>

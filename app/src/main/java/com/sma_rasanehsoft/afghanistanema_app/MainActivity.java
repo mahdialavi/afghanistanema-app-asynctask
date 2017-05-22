@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     DrawerLayout drawerLayout;
     ImageView hambergurmenu;
     ImageView imgsearch;
-    ArrayList<recycleinfo> recylerinfos;
+    ImageView afglogo;
+    public static ArrayList<recycleinfo> recylerinfos;
     ArrayList<String> recycleTitle;
     ArrayList<String> recycleimg;
     ArrayList<String> recycleId;
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         recycledate = new ArrayList<>();
         recylerinfos = new ArrayList<>();
         hambergurmenu = (ImageView) findViewById(R.id.hambergurmenu);
+        afglogo = (ImageView) findViewById(R.id.afglogo);
         imgsearch = (ImageView) findViewById(R.id.imgsearch);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         sliderShow = (SliderLayout) findViewById(R.id.slider);
@@ -131,6 +133,14 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Activity_Search.class);
+                startActivity(intent);
+            }
+        });
+        afglogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.afghanistanema.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });
@@ -158,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
                 recylerinfos.add(recycleinfo);
             }
-            recyclenews.setAdapter(new recyclenewsAdaptor(recylerinfos));
+            recyclenews.setAdapter(new RecycleNewsAdapter(recylerinfos));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -235,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                         try{
                             Intent intent=new Intent(Intent.ACTION_SENDTO);
                             intent.setType("text/plain");
-                            intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"mdp.alavi@gmail.com"});
+                            intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"afghanistanema@gmail.com"});
 //                            intent.putExtra(Intent.EXTRA_SUBJECT,);
 //                            intent.putExtra(Intent.EXTRA_TEXT,);
                             intent.setData(Uri.parse("mailto:"));
@@ -271,9 +281,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         super.onDestroy();
         releaseService();
     }
-
-
-
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

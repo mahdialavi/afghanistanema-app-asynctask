@@ -86,7 +86,7 @@ public class Activity_mohajer_news extends AppCompatActivity {
 
                 }
 
-                recyclenews.setAdapter(new recyclenewsAdaptor(recylerinfos) );
+                recyclenews.setAdapter(new RecycleNewsAdapter(recylerinfos) );
             } catch (JSONException e) {
                 e.printStackTrace();
             }
