@@ -22,6 +22,16 @@ public class RecycleNewsAdapter extends RecyclerView.Adapter<viewholder>{
     public RecycleNewsAdapter(ArrayList<recycleinfo> recycleinfos){
         this.recycleinfos=recycleinfos;
     }
+    public void clearApplications() {
+        int size = this.recycleinfos.size();
+        if (size > 0) {
+            for (int i = 0; i < size; i++) {
+                recycleinfos.remove(0);
+            }
+            this.notifyItemRangeRemoved(0, size);
+
+        }
+    }
     @Override
     public viewholder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclernews, parent, false);
@@ -61,9 +71,9 @@ class viewholder extends RecyclerView.ViewHolder{
                 intent.putExtra("id", Id);
                 intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 G.context.startActivity(intent);
-     // Toast.makeText(G.context,Id+"", Toast.LENGTH_SHORT).show();
-        
+
             }
         });
+
     }
 }
