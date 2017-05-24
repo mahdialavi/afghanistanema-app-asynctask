@@ -26,7 +26,7 @@ public class RecycleNewsAdapter extends RecyclerView.Adapter<viewholder>{
         int size = this.recycleinfos.size();
         if (size > 0) {
             for (int i = 0; i < size; i++) {
-                recycleinfos.remove(0);
+                recycleinfos.clear();
             }
             this.notifyItemRangeRemoved(0, size);
 

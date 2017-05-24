@@ -14,9 +14,7 @@
             android:layout_weight="0.3"
             android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/imgsearch"
                 android:layout_width="32dp"
-
                 android:scaleType="fitCenter"
                 android:layout_height="32dp" />
         </LinearLayout>
