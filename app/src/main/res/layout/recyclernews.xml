@@ -8,11 +8,19 @@
         android:layout_width="match_parent"
         android:background="#fdfdfd"
         android:gravity="right"
+        android:layoutDirection="rtl"
         android:id="@+id/linearNews"
         android:paddingLeft="5dp"
         android:layout_height="100dp"
         android:orientation="horizontal"
         >
+        <ImageView
+            android:layout_width="0dp"
+            android:src="@drawable/img"
+            android:id="@+id/img"
+            android:layout_weight="0.3"
+            android:padding="5dp"
+            android:layout_height="90dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -30,13 +38,7 @@
             />
 
 
-        <ImageView
-            android:layout_width="0dp"
-            android:src="@drawable/img"
-            android:id="@+id/img"
-            android:layout_weight="0.3"
-            android:padding="5dp"
-            android:layout_height="90dp" />
+
     </LinearLayout>
     <ImageView
         android:layout_width="match_parent"

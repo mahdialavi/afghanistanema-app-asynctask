@@ -42,8 +42,8 @@ public class Activity_splash extends AppCompatActivity {
                         }
                     });
                 }
-            }, 1, 1000);
-        } else {
+            }, 1, 1000);}
+                  else {
             Intent intent = new Intent(G.context, Connectivity.class);
             startActivity(intent);
         }

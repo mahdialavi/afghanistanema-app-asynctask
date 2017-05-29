@@ -2,7 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+   buildToolsVersion '25.0.0'
+  //  buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "com.sma_rasanehsoft.afghanistanema_app"
@@ -15,6 +16,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
@@ -29,8 +31,6 @@ dependencies {
     compile 'com.android.support:support-v4:23.2.1'
     compile 'com.android.support:design:23.2.1'
     compile 'com.nineoldandroids:library:2.4.0'
-
-
-
+    compile 'com.daimajia.slider:library:1.1.5'
 
 }
